@@ -1,0 +1,53 @@
+﻿@model AircraftListViewModel
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>List</h1>
+
+<form asp-action="Search" method="get">
+    <div class="row">
+        <div class="col-8">
+            <input asp-for="Query" class="form-control" />
+        </div>
+        <p class="col-2">
+            <button type="submit" class="btn btn-secondary">Search</button>
+        </p>
+        <p class="col-2">
+            <a asp-action="Create" class="btn btn-primary">Create New</a>
+        </p>
+    </div>
+</form>
+
+<table class="table table-striped border">
+    <thead>
+        <tr>
+            <th>
+                Registration
+            </th>
+            <th>
+                Type
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Aircrafts)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(m => item.Registration)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.Type)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new {  id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

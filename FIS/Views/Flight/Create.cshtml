@@ -1,0 +1,57 @@
+﻿@model FlightCreateViewModel
+
+<h3>Create Flight</h3>
+<br />
+
+<form asp-controller="Flight" asp-action="CreatePost" method="post">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label asp-for="FlightNumber"></label>
+            <input asp-for="FlightNumber" class="form-control">
+            <span asp-validation-for="FlightNumber" class="text-danger"></span>
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="FlightDate"></label>
+            <input asp-for="FlightDate" class="form-control">
+            <span asp-validation-for="FlightDate" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label asp-for="DepartureStation"></label>
+            <input asp-for="DepartureStation" class="form-control">
+            <span asp-validation-for="DepartureStation" class="text-danger"></span>
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="ArrivalStation"></label>
+            <input asp-for="ArrivalStation" class="form-control">
+            <span asp-validation-for="ArrivalStation" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label asp-for="FPassengers"></label>
+            <input asp-for="FPassengers" class="form-control">
+            <span asp-validation-for="FPassengers" class="text-danger"></span>
+        </div>
+        <div class="form-group col-md-4">
+            <label asp-for="JPassengers"></label>
+            <input asp-for="JPassengers" class="form-control">
+            <span asp-validation-for="JPassengers" class="text-danger"></span>
+        </div>
+        <div class="form-group col-md-4">
+            <label asp-for="YPassengers"></label>
+            <input asp-for="YPassengers" class="form-control">
+            <span asp-validation-for="YPassengers" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Aircraft"></label>
+        <select asp-items="Model.AircraftList" asp-for="Aircraft" class="form-control">
+            <option value="">--Select--</option>
+        </select>
+        <span asp-validation-for="Aircraft" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Create</button>
+</form>
+

@@ -1,0 +1,48 @@
+﻿@model FlightDeleteViewModel
+
+<h3>Delete Flight</h3>
+<h5>Are you sure you want to delete this flight ?</h5>
+<br />
+
+<form asp-controller="Flight" asp-action="DeletePost" method="post">
+    <input hidden asp-for="Id" />
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label asp-for="FlightNumber"></label>
+            <input readonly asp-for="FlightNumber" class="form-control">            
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="FlightDate"></label>
+            <input readonly asp-for="FlightDate" class="form-control">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label asp-for="DepartureStation"></label>
+            <input readonly asp-for="DepartureStation" class="form-control">
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="ArrivalStation"></label>
+            <input readonly asp-for="ArrivalStation" class="form-control">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label asp-for="FPassengers"></label>
+            <input readonly asp-for="FPassengers" class="form-control">
+        </div>
+        <div class="form-group col-md-4">
+            <label asp-for="JPassengers"></label>
+            <input readonly asp-for="JPassengers" class="form-control">
+        </div>
+        <div class="form-group col-md-4">
+            <label asp-for="YPassengers"></label>
+            <input readonly asp-for="YPassengers" class="form-control">
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Aircraft"></label>
+        <input readonly asp-for="Aircraft" class="form-control" />       
+    </div>
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>
